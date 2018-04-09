@@ -1,13 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class Form extends Component {
-  constructor() {
-    this.state = {}
-    render() {
-      return(<div className="Form"></div>)
-    }
-  }
+const Form = (props) => {
+  return(
+    <form onSubmit = { event => {
+      event.preventDefault();
+      const userInput = event.target.userInput.value
+      props.updateList(userInput);
+
+    }}>
+    <input type="text" name="userInput" />
+    <button>Add</button>
+  </form>
+
+
+  );
 }
 
 

@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class List extends Component {
-  constructor() {
-    this.state = {}
-    render() {
-      return(<div className="List">List Component</div>)
-
-    }
-  }
+const List = (props) => {
+  return(
+    <ul>{this.text}</ul>
+  );
 }
 
 

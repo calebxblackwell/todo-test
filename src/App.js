@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+
 import './App.css';
-import Form from './form';
-import List from './list';
+import Form from './components/form';
+import List from './components/list';
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state= {
       todos: [],
-      title: "Test todo App"
+      list: ""
     }
   }
+      onSubmit(text){
+        this.setState({
+          list: text
+        })
+      }
   render() {
     return (
       <div className="App">
           <h1>ToDo</h1>
-            <form>
-              <input type="text" />
-              <button onClick={this.addToDo}>Add</button>
-            </form>
+          <Form todos={this.state.todos}
+                updateList={(text)=> {this.onSubmit(text)} }/>
+          <List list={this.state.list} />
       </div>
     );
   }
