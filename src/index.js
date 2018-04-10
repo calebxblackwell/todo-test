@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 
 const store = createStore(rootReducer)
 const initialState = {
-  todos: [{'walk dog', 'feed fish'}],
+  todos: [],
   list: []
 };
 
