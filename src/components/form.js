@@ -4,7 +4,7 @@ import React from 'react';
 const Form = (props) => {
   return(
     <form onSubmit = { event => {
-      event.preventDefault();
+      event.preventDefault(); 
       const userInput = event.target.userInput.value
       props.updateList(userInput);
 

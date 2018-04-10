@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
 import './App.css';
+import ReactDOM from 'react-dom';
 import Form from './components/form';
 import List from './components/list';
 
@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state= {
       todos: [],
-      list: ""
+      list: []
     }
   }
       onSubmit(text){
@@ -18,6 +18,8 @@ class App extends Component {
         })
       }
   render() {
+    const todos = this.state.todos;
+    const list = this.state.list;
     return (
       <div className="App">
           <h1>ToDo</h1>
